@@ -1,18 +1,25 @@
-[tool.poetry]
+[project]
 name = "textual-pandas"
-homepage = "https://github.com/dannywade/textual-pandas"
+urls.homepage = "https://github.com/dannywade/textual-pandas"
 version = "0.2.3"
 description = "A module to build Textual widgets that represent data from the Pandas library"
-authors = ["Dan Wade <danny.wade35@gmail.com>"]
+authors = [{name="Dan Wade", email="danny.wade35@gmail.com"}]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "textual_pandas"}]
+requires-python = ">= 3.10"
 
-[tool.poetry.dependencies]
-python = ">=3.10,<4.0"
-textual = "<4.0, >=1.0"
-pandas = "<=2.2.3"
+dependencies =[
+"textual<4.0, >=1.0",
+"pandas<=2.2.3"]
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-asyncio"
+
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.9",
+]
