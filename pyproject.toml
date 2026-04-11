@@ -13,6 +13,9 @@ python = ">=3.10,<4.0"
 textual = "<4.0, >=1.0"
 pandas = ">2.0, <4.0"
 
+[project.optional-dependencies]
+test = ['pytest','pytest-asyncio']
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
