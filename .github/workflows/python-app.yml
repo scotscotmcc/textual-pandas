@@ -23,20 +23,20 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Install uv
-      uses: astral-sh/setup-uv@v7
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install the project
-      run: uv sync --all-extras --dev
-    - name: Install pytest
-      run: uv pip install pytest
+    - name: Install poetry
+      run: python -m pip install poetry
+    - name: Install dependencies
+      run: python -m poetry install
     - name: Install the specific guy
-      run: uv pip install .
+      run: python -m pip install .
     - name: Force install pandas versions
-      run: uv pip install --force-reinstall 'pandas${{ matrix.pandas-version }}'
+      run: python -m pip install --force-reinstall 'pandas${{ matrix.pandas-version }}'
     - name: Force install textual versions
-      run: uv pip install --force-reinstall 'textual${{ matrix.textual-version }}'
+      run: python -m install --force-reinstall 'textual${{ matrix.textual-version }}'
     
     - name: Run tests
-      run: uv run pytest tests
+      run: python -m pytest
