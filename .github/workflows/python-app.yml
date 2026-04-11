@@ -36,4 +36,4 @@ jobs:
     - name: Force install textual versions
       run: python -m pip install --force-reinstall 'textual${{ matrix.textual-version }}'
     - name: Run tests
-      run: python -m pytest
+      run: poetry run pytest
