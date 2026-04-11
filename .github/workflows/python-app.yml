@@ -33,6 +33,8 @@ jobs:
       run: uv pip install .
     - name: Force install pandas versions
       run: uv pip install --force-reinstall 'pandas${{ matrix.pandas-version }}'
+    - name: Force install textual versions
+      run: uv pip install --force-reinstall 'textual${{ matrix.textual-version }}'
     
     - name: Run tests
       run: uv run pytest tests
