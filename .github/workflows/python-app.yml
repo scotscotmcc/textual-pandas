@@ -29,16 +29,16 @@ jobs:
         python-version: ${{ matrix.python-version }}
         poetry-version: 2.3.3
 
-    - name: Install python
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
+    # - name: Install python
+    #   uses: actions/setup-python@v5
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
     
-    - name: Install Poetry
-      run: python -m pip install poetry
+    # - name: Install Poetry
+    #   run: python -m pip install poetry
 
-    - name: Install dependencies
-      run: poetry install --with dev
+    # - name: Install dependencies
+    #   run: poetry install --with dev
 
     - name: Force install pandas versions
       run: python -m pip install --force-reinstall 'pandas${{ matrix.pandas-version }}'
