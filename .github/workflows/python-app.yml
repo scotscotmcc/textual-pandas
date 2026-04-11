@@ -35,7 +35,7 @@ jobs:
         key: ${{ runner.os }}-pandas-${{ matrix.pandas-version }}
         restore-keys: ${{ runner.os }}-pandas-
     - name: Force install pandas versions
-      run: python -m pip install 'pandas${{ matrix.pandas-version }}' --no-index --find-links ${{ steps.pandas_cache.outputs.dir}}
+      run: python -m pip install 'pandas${{ matrix.pandas-version }}' --no-index --find-links ~/.cache/pip
 
     - name: Force install textual versions
       run: python -m pip install 'textual${{ matrix.textual-version }}'
