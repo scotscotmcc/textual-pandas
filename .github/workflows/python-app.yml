@@ -27,7 +27,7 @@ jobs:
       uses: packetcoders/action-setup-cache-python-poetry@main
       with:
         python-version: ${{ matrix.python-version }}
-        poetry-version: 1.2.2
+        poetry-version: 2.3.3
 
     - name: Install python
       uses: actions/setup-python@v5
