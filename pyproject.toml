@@ -6,14 +6,14 @@ description = "A module to build Textual widgets that represent data from the Pa
 authors = ["Dan Wade <danny.wade35@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "textual_pandas"}]
+packages = [{ include = "textual_pandas" }]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
 textual = "<4.0, >=1.0"
 pandas = ">2.0, <4.0"
 
-[project.optional-dependencies]
+[tool.poetry.extras]
 dev = ['pytest','pytest-asyncio']
 
 [build-system]
