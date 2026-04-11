@@ -21,14 +21,16 @@ jobs:
         textual-version: [">7,<8",">8"]
 
     steps:
+    - uses: actions/checkout@v6
+
     - name: Cache Poetry dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ~/.cache/pypoetry
         key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
         restore-keys: |
-          ${{ runner.os }}-poetry-      
-    - uses: actions/checkout@v6
+          ${{ runner.os }}-poetry-
+
     - name: Install python
       uses: actions/setup-python@v5
       with:
