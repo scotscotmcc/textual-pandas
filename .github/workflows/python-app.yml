@@ -31,7 +31,7 @@ jobs:
     - name: Install the specific guy
       run: uv pip install .
     - name: Force install pandas versions
-      run: uv pip install --force 'pandas${{ matrix.pandas-version }}'
+      run: uv pip install --force-reinstall 'pandas${{ matrix.pandas-version }}'
     
     - name: Run tests
       run: uv run pytest tests
