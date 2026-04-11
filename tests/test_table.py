@@ -8,7 +8,7 @@ import pandas as pd
 
 @pytest.mark.asyncio
 async def test_dataframetable():
-    "asdf"
+    "Testing creating the DataFrameTable and then later updating it."
     df = pd.DataFrame()
     df["Name"] = ["Dan", "Ben", "Don", "John", "Jim", "Harry"]
     df["Score"] = [77, 56, 90, 99, 83, 69]
